@@ -28,5 +28,6 @@ jobs:
          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          AWS_REGION: ${{ secrets.AWS_REGION }}
     - name: terraform init
-      run: cd devops && terraform init
-    
+      run: cd devops && terraform init 
+    - name: terraform apply
+      run : cd devops && terraform apply -var="tag=${{ env.RELEASE_VERSION  }}" -auto-approve
