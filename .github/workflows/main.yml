@@ -13,3 +13,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build with Maven
       run: mvn package
+    - name: build docker image
+      run: docker build -t 041221872505.dkr.ecr.ap-south-1.amazonaws.com/spring:v1 .
